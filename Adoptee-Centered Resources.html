@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)file:///C:/Users/atola/Downloads/index(6).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adoptee-Centered Resources — Southern Directory</title>
+<meta name="description" content="An adoptee-centered directory of clinicians and community for Louisiana, Mississippi, Alabama, Florida, and Texas, with national resources.">
+<style>
+  :root{
+    --cream:#FBF7EC; --paper:#FFFFFF; --forest:#22402E; --forest2:#2E5340;
+    --brass:#9C7C3A; --brass-soft:#C9A24B; --coral:#C77B5E;
+    --ink:#233029; --muted:#6E6857; --line:#E8E1CE; --shadow:0 2px 10px rgba(34,64,46,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5}
+  a{color:var(--forest2)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  header.top{padding:46px 0 10px}
+  .eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--brass);font-weight:700}
+  h1{font-family:Georgia,"Times New Roman",serif;color:var(--forest);font-weight:700;
+     font-size:40px;line-height:1.08;margin:.28em 0 .1em}
+  .lede{max-width:760px;color:var(--muted);font-size:15.5px;margin:8px 0 0}
+  .lede strong{color:var(--ink)}
+
+  .controls{position:sticky;top:0;z-index:20;background:rgba(251,247,236,.94);
+    backdrop-filter:blur(6px);border-bottom:1px solid var(--line);margin-top:22px;padding:12px 0}
+  .controls .wrap{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+  .search{flex:1 1 240px;min-width:200px;display:flex;align-items:center;gap:8px;
+    background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:9px 12px;box-shadow:var(--shadow)}
+  .search input{border:0;outline:0;font-size:15px;width:100%;background:transparent;color:var(--ink)}
+  .search svg{flex:none;opacity:.5}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chip{border:1px solid var(--line);background:var(--paper);color:var(--forest);
+    padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:600;cursor:pointer;transition:.15s}
+  .chip:hover{border-color:var(--brass)}
+  .chip[aria-pressed="true"]{background:var(--forest);color:#fff;border-color:var(--forest)}
+  .chip .n{opacity:.6;font-weight:600;margin-left:5px;font-size:12px}
+
+  .count{color:var(--muted);font-size:13px;margin:16px 0 4px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;padding:6px 0 10px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;gap:9px;opacity:0;transform:translateY(8px);
+    animation:rise .4s forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .card .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .dot{width:34px;height:34px;border-radius:50%;background:var(--forest);flex:none;
+    display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px}
+  .card h3{font-family:Georgia,serif;color:var(--forest);font-size:18px;margin:0;line-height:1.2}
+  .tag{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;
+    padding:3px 8px;border-radius:6px}
+  .tag.Clinician{background:#E9F0EA;color:#2E5340}
+  .tag.Community{background:#F4EBDD;color:#8A6A2A}
+  .tag.Directory{background:#EAE7F0;color:#5A4E7A}
+  .tag.Training{background:#E4EEF3;color:#33566F}
+  .tag.Records{background:#F6E7E0;color:#B15A3C}
+  .tag.Policy{background:#E9EEE6;color:#4A6138}
+  .tag.Foundations{background:#EAF0F0;color:#356}
+  .tag.Note{background:#F6E7E0;color:#B15A3C}
+  .who{font-size:13px;color:var(--brass);font-weight:600}
+  .loc{font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .blurb{font-size:14px;color:var(--ink);margin:2px 0 0}
+  .blurb em{color:var(--forest2);font-style:italic}
+  .aster{display:block;margin-top:8px;font-size:12px;line-height:1.45;color:var(--muted);
+    border-left:2px solid var(--brass-soft);padding-left:9px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:13.5px;font-weight:600;
+    padding:8px 13px;border-radius:9px;border:1px solid var(--forest);color:var(--forest);transition:.15s}
+  .btn:hover{background:var(--forest);color:#fff}
+  .btn.alt{border-color:var(--line);color:var(--muted)}
+  .btn.alt:hover{background:var(--brass);border-color:var(--brass);color:#fff}
+  .btn svg{flex:none}
+
+  .statehead{grid-column:1/-1;font-family:Georgia,serif;color:var(--forest);font-size:15px;
+    letter-spacing:.02em;margin:14px 0 -4px;padding-bottom:6px;border-bottom:1px solid var(--line);
+    display:flex;align-items:baseline;gap:10px}
+  .statehead .sub{font-size:12px;color:var(--muted);font-weight:400;font-family:-apple-system,sans-serif}
+
+  .note{background:#FBF2EC;border:1px solid #EEDCCF}
+  .note .dot{background:var(--coral)}
+
+  .refs{margin:30px 0 6px}
+  .refs > h2{font-family:Georgia,serif;color:var(--forest);font-size:26px;margin:0 0 4px}
+  .refs > .rlede{color:var(--muted);font-size:14px;max-width:760px;margin:0 0 18px}
+  .refgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:16px}
+  .refcard{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+  .refcard h3{font-family:Georgia,serif;color:var(--forest);font-size:16.5px;margin:0 0 4px}
+  .refcard .rk{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 10px}
+  .refcard ul{margin:0;padding:0;list-style:none}
+  .refcard li{font-size:13px;line-height:1.5;color:var(--ink);padding:7px 0;border-top:1px solid var(--line)}
+  .refcard li:first-child{border-top:0;padding-top:0}
+  .refcard li b{color:var(--forest2)}
+  .refcard li .m{color:var(--muted)}
+  .refcard li a{color:var(--forest2);text-decoration:none;border-bottom:1px solid var(--brass-soft)}
+  .refcard li a:hover{color:var(--brass)}
+  .refcard.wide{grid-column:1/-1}
+  .about{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin:18px 0;
+    box-shadow:var(--shadow)}
+  .about summary{cursor:pointer;font-weight:700;color:var(--forest);font-size:14.5px}
+  .about p{color:var(--muted);font-size:13.5px;margin:10px 0 0}
+
+  footer.foot{margin:26px 0 60px;background:var(--forest);color:#EFEFE6;border-radius:18px;padding:30px 26px;text-align:center}
+  footer.foot h2{font-family:Georgia,serif;font-weight:700;font-size:22px;margin:0 0 6px;color:#fff}
+  footer.foot p{color:#CFD8CE;font-size:14px;max-width:600px;margin:0 auto 16px}
+  .add{display:inline-flex;align-items:center;gap:8px;background:var(--brass-soft);color:#1c2a20;
+    text-decoration:none;font-weight:700;font-size:15px;padding:12px 20px;border-radius:11px;transition:.15s}
+  .add:hover{background:#fff}
+  .fine{color:#AFC0B2;font-size:11.5px;margin-top:16px;max-width:640px;margin-left:auto;margin-right:auto}
+  .empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0;font-size:15px}
+  @media(max-width:560px){h1{font-size:31px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="eyebrow">Adoptee-Centered Resources · 12 Southern States + National</div>
+  <h1>Adoptee-Centered Resources</h1>
+  <p class="lede">A shareable directory of <strong>adoptee-identifying clinicians</strong>, adoption-competent care, and adoptee-led community across the South — Alabama, Arkansas, Florida, Georgia, Kentucky, Louisiana, Mississippi, Missouri, Oklahoma, South Carolina, Tennessee, and Texas — plus national resources. Built to center the people adoption is <em>about</em>, and honest about where in-state options are still thin. Every link goes to the provider’s own site, a professional directory, or an institution.</p>
+</div></header>
+
+<div class="controls"><div class="wrap">
+  <label class="search">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+    <input id="q" type="search" placeholder="Search name, city, specialty…" aria-label="Search resources">
+  </label>
+  <div class="chips" id="chips"><button class="chip" aria-pressed="true">All<span class="n">31</span></button><button class="chip" aria-pressed="false">Alabama<span class="n">2</span></button><button class="chip" aria-pressed="false">Arkansas<span class="n">1</span></button><button class="chip" aria-pressed="false">Florida<span class="n">2</span></button><button class="chip" aria-pressed="false">Georgia<span class="n">2</span></button><button class="chip" aria-pressed="false">Kentucky<span class="n">1</span></button><button class="chip" aria-pressed="false">Louisiana<span class="n">4</span></button><button class="chip" aria-pressed="false">Mississippi<span class="n">2</span></button><button class="chip" aria-pressed="false">Missouri<span class="n">1</span></button><button class="chip" aria-pressed="false">Oklahoma<span class="n">1</span></button><button class="chip" aria-pressed="false">South Carolina<span class="n">1</span></button><button class="chip" aria-pressed="false">Tennessee<span class="n">1</span></button><button class="chip" aria-pressed="false">Texas<span class="n">4</span></button><button class="chip" aria-pressed="false">National<span class="n">9</span></button></div>
+</div></div>
+
+<main class="wrap">
+  <div class="count" id="count">31 resources</div>
+  <section class="grid" id="grid"><div class="statehead">Alabama <span class="sub">limited in-state supply</span></div><article class="card note" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">!</div>
+      <h3>No in-state adoptee-identifying clinician listed</h3>
+    </div>
+    <div class="row">
+      <span class="tag Note">Note</span>
+      <span class="who">Access gap — Alabama</span>
+    </div>
+    <div class="loc">📍 Alabama</div>
+    <p class="blurb">The Alabama directory page currently lists national/telehealth options rather than an in-state adoptee clinician. Check it periodically as listings expand, and use the national directory for telehealth.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/alabama/" target="_blank" rel="noopener noreferrer">Open AL page <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Alabama Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Alabama</div>
+    <p class="blurb">State page of adoptee-identifying clinicians licensed in Alabama. In-state supply is currently thin; pair with the national directory (telehealth) and the TAC/NTI directory.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/alabama/" target="_blank" rel="noopener noreferrer">Open AL list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Arkansas <span class="sub">limited in-state supply</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Arkansas Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Arkansas</div>
+    <p class="blurb">State page of adoptee-identifying clinicians licensed in Arkansas. Where in-state listings are thin, use the national directory for telehealth and the TAC/NTI directory for adoption-competent care.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/arkansas/" target="_blank" rel="noopener noreferrer">Open AR list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Florida <span class="sub"></span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Robyn MooYoung, PsyD</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Transracial, international adoptee</span>
+    </div>
+    <div class="loc">📍 Maitland, FL + FL telehealth</div>
+    <p class="blurb">Adoptee psychologist (MooYoung Psychological Health) working with adults on trauma, grief, and complex family dynamics.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/florida/" target="_blank" rel="noopener noreferrer">View in FL directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Florida Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Florida</div>
+    <p class="blurb">The full, maintained list of adoptee-identifying clinicians licensed in Florida.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/florida/" target="_blank" rel="noopener noreferrer">Open FL list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Georgia <span class="sub"></span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Kate Murphy, LCSW</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Same-race domestic adoptee · in reunion</span>
+    </div>
+    <div class="loc">📍 Atlanta, GA + GA telehealth</div>
+    <p class="blurb">Adoptee therapist (Kate Murphy Therapy) working with adults and couples on attachment, identity, <em>search &amp; reunion</em>, relationships, and PTSD/C-PTSD; EMDR and Lifespan Integration.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/georgia/" target="_blank" rel="noopener noreferrer">View in GA directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Georgia Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Georgia</div>
+    <p class="blurb">The full, maintained list of adoptee-identifying clinicians licensed in Georgia.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/georgia/" target="_blank" rel="noopener noreferrer">Open GA list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Kentucky <span class="sub">telehealth options</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Kentucky Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services · incl. telehealth providers</span>
+    </div>
+    <div class="loc">📍 Kentucky</div>
+    <p class="blurb">State page listing adoptee-identifying clinicians available to Kentucky clients (including telehealth providers such as Caela Day, PsyD). Pair with the national directory and the TAC/NTI directory.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/kentucky/" target="_blank" rel="noopener noreferrer">Open KY list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Louisiana <span class="sub"></span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Melissa LaCour, LPC</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Same-race domestic adoptee · adoption-competent (C.A.S.E.-trained)</span>
+    </div>
+    <div class="loc">📍 Lafayette, LA (in person) + LA telehealth</div>
+    <p class="blurb">Adoptee therapist working with adoptees, adoptive parents, and birth parents on identity, attachment, relationships, and reunion.</p>
+    <div class="links"><a class="btn" href="https://www.melissalacour.com/" target="_blank" rel="noopener noreferrer">Visit site <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn alt" href="https://www.linkedin.com/in/melissa-lacour-lpc-55a6a9b9/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Maggie Credeur, LCSW</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Same-race domestic adoptee · in reunion</span>
+    </div>
+    <div class="loc">📍 Louisiana</div>
+    <p class="blurb">Adoptee clinician (Credeur Counseling) focused on adoption and gender-related concerns with adults.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/louisiana/" target="_blank" rel="noopener noreferrer">View in LA directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 60ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Louisiana Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Louisiana</div>
+    <p class="blurb">The full, maintained list of adoptee-identifying clinicians licensed in Louisiana.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/louisiana/" target="_blank" rel="noopener noreferrer">Open LA list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 90ms;">
+    <div class="row">
+      <div class="dot">§</div>
+      <h3>Louisiana DCFS — Adoption &amp; Records</h3>
+    </div>
+    <div class="row">
+      <span class="tag Records">Records &amp; Rights</span>
+      <span class="who">Louisiana Dept. of Children &amp; Family Services (state agency)</span>
+    </div>
+    <div class="loc">📍 Statewide</div>
+    <p class="blurb">State adoption program, subsidy support, and the process for records and post-adoption assistance in Louisiana.</p>
+    <div class="links"><a class="btn" href="https://www.dcfs.louisiana.gov/page/adoption" target="_blank" rel="noopener noreferrer">LA DCFS <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Mississippi <span class="sub">limited in-state supply</span></div><article class="card note" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">!</div>
+      <h3>No adoptee-identifying clinician currently listed</h3>
+    </div>
+    <div class="row">
+      <span class="tag Note">Note</span>
+      <span class="who">Access gap — Mississippi</span>
+    </div>
+    <div class="loc">📍 Mississippi</div>
+    <p class="blurb">As of this compilation, no adoptee-<em>identifying</em> clinician is listed in the national directory for Mississippi. Use the National Adoptee-Therapist Directory for telehealth options, the TAC/NTI directory for adoption-competent care, and the post-adoption center for in-state supports.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/adoptee-therapist-directory/" target="_blank" rel="noopener noreferrer">Find telehealth (national) <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Mississippi Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Mississippi</div>
+    <p class="blurb">State page of adoptee-identifying clinicians for Mississippi. In-state supply is currently very thin; the national directory (telehealth) and the TAC/NTI directory are often the nearest options.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/mississippi/" target="_blank" rel="noopener noreferrer">Open MS list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Missouri <span class="sub">telehealth options</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Missouri Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Missouri</div>
+    <p class="blurb">State page of adoptee-identifying clinicians licensed in Missouri. Where in-state listings are thin, use the national directory for telehealth.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/missouri/" target="_blank" rel="noopener noreferrer">Open MO list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Oklahoma <span class="sub">telehealth options</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Oklahoma Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services · incl. telehealth providers</span>
+    </div>
+    <div class="loc">📍 Oklahoma</div>
+    <p class="blurb">State page listing adoptee-identifying clinicians available to Oklahoma clients (including telehealth providers such as Caela Day, PsyD). Pair with the national and TAC/NTI directories.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/oklahoma/" target="_blank" rel="noopener noreferrer">Open OK list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">South Carolina <span class="sub">limited in-state supply</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>South Carolina Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 South Carolina</div>
+    <p class="blurb">State page of adoptee-identifying clinicians for South Carolina. In-state supply is currently thin; the national directory (telehealth) is often the nearest option.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/south-carolina/" target="_blank" rel="noopener noreferrer">Open SC list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Tennessee <span class="sub">limited in-state supply</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Tennessee Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Tennessee</div>
+    <p class="blurb">State page of adoptee-identifying clinicians licensed in Tennessee. Where in-state listings are thin, use the national directory for telehealth and the TAC/NTI directory for adoption-competent care.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/tennessee/" target="_blank" rel="noopener noreferrer">Open TN list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">Texas <span class="sub"></span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Pam Greenstone, LPC — Deep Roots Counseling</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Adoptee · works with adult adoptees &amp; the whole constellation</span>
+    </div>
+    <div class="loc">📍 Austin, TX + TX telehealth</div>
+    <p class="blurb">Adoptee therapist supporting adult adoptees through identity, reunion, and relationships; counseling in Austin since 2002.</p>
+    <div class="links"><a class="btn" href="https://www.pgreenstonetherapy.com/" target="_blank" rel="noopener noreferrer">Visit site <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">◆</div>
+      <h3>Kimberley Mead, LPC-S · Brooke Robb, LPC · Kate Coffield, LCSW</h3>
+    </div>
+    <div class="row">
+      <span class="tag Clinician">Clinician</span>
+      <span class="who">Adoptee clinicians (Austin) · search &amp; reunion, attachment injuries, identity</span>
+    </div>
+    <div class="loc">📍 Austin, TX + TX telehealth</div>
+    <p class="blurb">Several adoptee-identifying clinicians in the Austin area offer individual and group work, including in-person adoptee groups and search-and-reunion support.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/texas/" target="_blank" rel="noopener noreferrer">View in TX directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 60ms;">
+    <div class="row">
+      <div class="dot">❖</div>
+      <h3>Adoption Knowledge Affiliates (Austin)</h3>
+    </div>
+    <div class="row">
+      <span class="tag Community">Community</span>
+      <span class="who">Adoptee/constellation nonprofit</span>
+    </div>
+    <div class="loc">📍 Austin, TX + virtual</div>
+    <p class="blurb">Support meetings, referral lists, and constellation education; a hub for Texas adoptees and families.</p>
+    <div class="links"><a class="btn" href="https://adoptionknowledge.org/resources/" target="_blank" rel="noopener noreferrer">Resources <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 90ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>Texas Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services</span>
+    </div>
+    <div class="loc">📍 Texas</div>
+    <p class="blurb">The full, maintained list of adoptee-identifying clinicians licensed in Texas.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/texas/" target="_blank" rel="noopener noreferrer">Open TX list <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><div class="statehead">National <span class="sub">works anywhere / telehealth</span></div><article class="card" style="animation-delay: 0ms;">
+    <div class="row">
+      <div class="dot">▤</div>
+      <h3>National Adoptee-Therapist Directory</h3>
+    </div>
+    <div class="row">
+      <span class="tag Directory">Directory</span>
+      <span class="who">Beyond Words Psychological Services · Dr. Chaitra Wirta-Leiker (transracial, international adoptee)</span>
+    </div>
+    <div class="loc">📍 U.S.-wide · searchable by state</div>
+    <p class="blurb">The core directory of licensed U.S. clinicians who <em>identify as adoptees</em> and work with the adoption constellation. Start here when a state below is thin.</p>
+    <div class="links"><a class="btn" href="https://growbeyondwords.com/adoptee-therapist-directory/" target="_blank" rel="noopener noreferrer">Open the directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 30ms;">
+    <div class="row">
+      <div class="dot">✦</div>
+      <h3>Adoption-Competent (TAC / NTI-Trained) Clinician Directory *</h3>
+    </div>
+    <div class="row">
+      <span class="tag Training">Training</span>
+      <span class="who">Center for Adoption Support and Education (C.A.S.E.)</span>
+    </div>
+    <div class="loc">📍 U.S.-wide · searchable by state</div>
+    <p class="blurb">Find therapists who have completed C.A.S.E. adoption-competency training — the 72-hour Training for Adoption Competency (TAC) and/or the web-based National Adoption Competency Mental Health Training Initiative (NTI). Useful where an adoptee-identifying clinician isn’t available locally.<span class="aster">* Completion denotes a clinician’s <em>own</em> training and stated competency in adoption work — not measured outcomes for the adoptees they treat. Inclusion is not an endorsement of any individual therapist.</span></p>
+    <div class="links"><a class="btn" href="https://adoptionsupport.org/national-directory/" target="_blank" rel="noopener noreferrer">Open TAC / NTI directory <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 60ms;">
+    <div class="row">
+      <div class="dot">❖</div>
+      <h3>Angela Tucker — The Adopted Life &amp; Adoptee Mentoring Society</h3>
+    </div>
+    <div class="row">
+      <span class="tag Community">Community</span>
+      <span class="who">Adoptee author, speaker; founder of the Adoptee Mentoring Society (2022)</span>
+    </div>
+    <div class="loc">📍 Virtual · nationwide mentoring for adopted youth &amp; adults</div>
+    <p class="blurb">Adoptee-led mentoring, writing, and community — a space where adoptees are “fully seen, heard, and understood.”</p>
+    <div class="links"><a class="btn" href="https://www.angelatucker.com/" target="_blank" rel="noopener noreferrer">Visit site <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a><a class="btn alt" href="https://www.linkedin.com/in/theadoptedlife" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></article><article class="card" style="animation-delay: 90ms;">
+    <div class="row">
+      <div class="dot">❖</div>
+      <h3>Adoptees On (podcast)</h3>
+    </div>
+    <div class="row">
+      <span class="tag Community">Community</span>
+      <span class="who">Adoptee-hosted podcast</span>
+    </div>
+    <div class="loc">📍 Listen anywhere</div>
+    <p class="blurb">Adult adoptees discuss search, reunion, secondary rejection, and identity — a free, ongoing psychoeducation resource for clients between sessions.</p>
+    <div class="links"><a class="btn" href="https://www.adopteeson.com/" target="_blank" rel="noopener noreferrer">Listen <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 120ms;">
+    <div class="row">
+      <div class="dot">§</div>
+      <h3>National Center for Enhanced Post-Adoption Support</h3>
+    </div>
+    <div class="row">
+      <span class="tag Records">Records &amp; Rights</span>
+      <span class="who">Federally supported post-adoption technical-assistance center</span>
+    </div>
+    <div class="loc">📍 State-by-state post-adoption support profiles</div>
+    <p class="blurb">State profiles of publicly funded post-adoption and post-permanency supports — useful for locating in-state services and telehealth.</p>
+    <div class="links"><a class="btn" href="https://postadoptioncenter.org/" target="_blank" rel="noopener noreferrer">State profiles <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 150ms;">
+    <div class="row">
+      <div class="dot">§</div>
+      <h3>Adoptee Rights Law Center — State OBC Laws</h3>
+    </div>
+    <div class="row">
+      <span class="tag Records">Records &amp; Rights</span>
+      <span class="who">Gregory Luce, JD (adoptee attorney) · Adoptee United</span>
+    </div>
+    <div class="loc">📍 All 50 states + D.C.</div>
+    <p class="blurb">The clearest state-by-state map of who can access their <em>original birth certificate</em> — and the restrictions that remain. In Louisiana, adults 24+ have an unrestricted right to their OBC (Act 470 of 2022; La. R.S. 40:73). Use it to answer a client's records question accurately.</p>
+    <div class="links"><a class="btn" href="https://adopteerightslaw.com/" target="_blank" rel="noopener noreferrer">Check your state <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 180ms;">
+    <div class="row">
+      <div class="dot">⚖</div>
+      <h3>upEND Movement</h3>
+    </div>
+    <div class="row">
+      <span class="tag Policy">Policy</span>
+      <span class="who">Abolitionist child-welfare movement (Alan Dettlaff et al.)</span>
+    </div>
+    <div class="loc">📍 National · political education &amp; resources</div>
+    <p class="blurb">Names the child-welfare system “family policing” and organizes toward abolition and an unconditional safety net. One of the field's three positions (alongside reform and prevention) covered in the training.</p>
+    <div class="links"><a class="btn" href="https://upendmovement.org/" target="_blank" rel="noopener noreferrer">Learn more <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 210ms;">
+    <div class="row">
+      <div class="dot">⚖</div>
+      <h3>National Coalition for Child Protection Reform (NCCPR)</h3>
+    </div>
+    <div class="row">
+      <span class="tag Policy">Policy</span>
+      <span class="who">Child-welfare reform advocacy organization</span>
+    </div>
+    <div class="loc">📍 National · issue papers &amp; policy analysis</div>
+    <p class="blurb">The “reform” position from the training: keep the system, change what it rewards — fix the incentives that drive removal and speed. Issue papers on poverty, racial bias, mandatory reporting, and family preservation.</p>
+    <div class="links"><a class="btn" href="https://nccpr.org/" target="_blank" rel="noopener noreferrer">Issue papers <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article><article class="card" style="animation-delay: 240ms;">
+    <div class="row">
+      <div class="dot">❦</div>
+      <h3>Adoptee-centered reading &amp; frameworks</h3>
+    </div>
+    <div class="row">
+      <span class="tag Foundations">Foundations</span>
+      <span class="who">For clinicians &amp; clients</span>
+    </div>
+    <div class="loc">📍 Books &amp; models</div>
+    <p class="blurb">Verrier, <em>The Primal Wound</em> · Herman, <em>Trauma and Recovery</em> · Boss, <em>Ambiguous Loss</em> · Baden on adoption microaggressions · the Adoptee Consciousness Model (Branco et al.) · critical adoption studies (Samuels, Sisson, Kim, McGinnis, Goodwin).</p>
+    <div class="links"><a class="btn" href="https://www.angelatucker.com/" target="_blank" rel="noopener noreferrer">Adoptee voices <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"></path></svg></a></div></article></section>
+
+  <section class="refs">
+    <h2>The evidence base</h2>
+    <p class="rlede">Every author, study, framework, statute, and organization cited in <em>Understanding the Adoption Trauma Spectrum</em>, gathered here as a companion reference. Journal articles are given as full citations; organizations link to their own sites.</p>
+    <div class="refgrid">
+
+      <div class="refcard">
+        <p class="rk">Peer-reviewed &amp; scholarly sources</p>
+        <ul>
+          <li>Toland, A. M., Blakey, J. M., Selleck, K. L., Rolock, N., &amp; Ocasio, K. (2024). Adoption-informed care: What clinicians in the United States need to know. <span class="m"><i>Adoption Quarterly, 28</i>(4), 450–482.</span> <a href="https://doi.org/10.1080/10926755.2024.2352385" target="_blank" rel="noopener noreferrer">doi:10.1080/10926755.2024.2352385</a></li>
+          <li>Toland, A. M. (2022). Down the rabbit hole: The mental health implications of adoption trauma on people adopted at birth. <span class="m"><i>Reflections: Narratives of Professional Helping, 30</i>(2), 88–103.</span> <a href="https://reflectionsnarrativesofprofessionalhelping.org/index.php/Reflections/article/view/2054" target="_blank" rel="noopener noreferrer">Reflections</a></li>
+          <li>Atkinson, A. J., Gonet, P. A., Freundlich, M., &amp; Riley, D. B. (2013). Adoption competent clinical practice: Defining its meaning and development. <span class="m"><i>Adoption Quarterly, 16</i>(3–4), 156–174.</span> <a href="https://doi.org/10.1080/10926755.2013.844215" target="_blank" rel="noopener noreferrer">doi:10.1080/10926755.2013.844215</a></li>
+          <li>Toland, A. M., King, E., Blakey, J. M., Rolock, N., &amp; Boyle, M. (2025–2027). Adoption across the lifespan <span class="m">[Study in progress]. University of West Florida (IRB-approved). 662 adult adoptees; 19 birth countries; 46 U.S. states — the study underlying the Adoption Trauma Spectrum.</span></li>
+          <li>Selleck, K. L., Toland, A. M., &amp; Blakey, J. M. (2024). From denial to disproportionality: History of white supremacy, structural racism, and the child welfare system. <span class="m">Analyzes NABSW, CAPTA, ICWA, MEPA/IEPA, ASFA, and FFPSA.</span> <a href="https://doi.org/10.1093/oso/9780197641422.003.0009" target="_blank" rel="noopener noreferrer">doi</a></li>
+        </ul>
+      </div>
+
+      <div class="refcard">
+        <p class="rk">Theoretical anchors &amp; frameworks</p>
+        <ul>
+          <li>Branco, S. F., Kim, J. R., Newton, G., Cooper-Lewter, S. K., &amp; O’Loughlin, P. (2023). Out of the fog and into consciousness: A model of adoptee awareness [The Adoptee Consciousness Model]. <span class="m"><i>International Body Psychotherapy Journal, 22</i>(1), 53–66.</span> <a href="https://redthreadbroken.com/2022/06/23/out-of-the-fog-and-into-consciousness-a-model-of-adoptee-awareness/" target="_blank" rel="noopener noreferrer">full text</a></li>
+          <li>van der Kolk, B. A. (2014). <i>The body keeps the score.</i> <span class="m">Viking.</span></li>
+          <li>Herman, J. L. (2015). <i>Trauma and recovery</i> (Rev. ed.). <span class="m">Basic Books. (Orig. 1992.)</span></li>
+          <li>Boss, P. (1999). <i>Ambiguous loss.</i> <span class="m">Harvard University Press.</span></li>
+          <li>Verrier, N. N. (1993). <i>The primal wound.</i> <span class="m">Gateway Press.</span></li>
+          <li>Baden, A. L., &amp; Steward, R. J. (2000). The Cultural-Racial Identity Model as applied to transracial adoption. <span class="m"><i>Journal of Social Distress and the Homeless, 9</i>(4), 309–337. (Model first proposed 1995.)</span> <a href="https://doi.org/10.1023/A:1009493827019" target="_blank" rel="noopener noreferrer">doi</a></li>
+          <li>Baden, A. L. (2016). “Do you know your real parents?” and other adoption microaggressions. <span class="m"><i>Adoption Quarterly, 19</i>(1), 1–25.</span> <a href="https://doi.org/10.1080/10926755.2015.1026012" target="_blank" rel="noopener noreferrer">doi</a></li>
+          <li>Samuels, G. M. (2009). Ambiguous loss of home: Familial (im)permanence among young adults with foster care backgrounds. <span class="m"><i>Children and Youth Services Review, 31</i>(12), 1229–1239.</span> <a href="https://doi.org/10.1016/j.childyouth.2009.05.008" target="_blank" rel="noopener noreferrer">doi</a></li>
+          <li>Brodzinsky, D. M., Schechter, M. D., &amp; Henig, R. M. (1992). <i>Being adopted: The lifelong search for self.</i> <span class="m">Anchor Books.</span></li>
+          <li>Palacios, J., &amp; Brodzinsky, D. (2010). Adoption research: Trends, topics, outcomes. <span class="m"><i>International Journal of Behavioral Development, 34</i>(3), 270–284</span> <span class="m">(differential plasticity / developmental recovery).</span> <a href="https://doi.org/10.1177/0165025410362837" target="_blank" rel="noopener noreferrer">doi</a></li>
+          <li>Anzaldúa, G. (1987). <i>Borderlands/La frontera.</i> Aunt Lute Books. · Freire, P. (1970). <i>Pedagogy of the oppressed.</i> <span class="m">Herder &amp; Herder. (Basis for the ACM.)</span></li>
+          <li>Braun, V., &amp; Clarke, V. (2006). Using thematic analysis in psychology. <span class="m"><i>Qualitative Research in Psychology, 3</i>(2), 77–101</span> · (2022) <i>Thematic Analysis: A Practical Guide.</i> SAGE. <a href="https://doi.org/10.1191/1478088706qp063oa" target="_blank" rel="noopener noreferrer">doi</a></li>
+          <li>Felitti, V. J., Anda, R. F., et al. (1998). Adverse Childhood Experiences (ACE) Study. <span class="m"><i>American Journal of Preventive Medicine, 14</i>(4), 245–258</span> <span class="m">(CDC–Kaiser).</span> <a href="https://doi.org/10.1016/S0749-3797(98)00017-8" target="_blank" rel="noopener noreferrer">doi</a></li>
+        </ul>
+      </div>
+
+      <div class="refcard">
+        <p class="rk">Critical adoption studies scholars</p>
+        <ul>
+          <li><b>Gina Miranda Samuels</b> <span class="m">(Univ. of Chicago) — Black, mixed-race transracial adoptee; transracial adoption, mixed-race identity, ambiguous loss of home; epistemic trauma / “hermeneutical smothering” (2022).</span></li>
+          <li><b>Kimberly McKee</b> <span class="m">(Grand Valley State) — <i>Disrupting Kinship</i> (2019), the “transnational adoption industrial complex”; <i>Adoption Fantasies</i> (2023).</span></li>
+          <li><b>Amanda Baden</b> <span class="m">(Montclair State) — Hong Kong–born transracial adoptee; Cultural–Racial Identity Model (Baden &amp; Steward, 1995/2000); adoption microaggressions.</span></li>
+          <li><b>JaeRan Kim (“J. Kim”)</b> <span class="m">(Univ. of Washington Tacoma) — Korean adoptee; blog <i>Harlow’s Monkey</i>; co-creator of the Adoptee Consciousness Model.</span></li>
+          <li><b>Susan Branco</b> <span class="m">(Palo Alto Univ.) — Colombian-born transracial/transnational adoptee; co-developer of the Adoptee Consciousness Model.</span></li>
+          <li><b>Hollee McGinnis</b> <span class="m">(Virginia Commonwealth Univ.) — Korean adoptee; co-founder of Also Known As (AKA); led the <i>Beyond Culture Camp</i> study (2009).</span></li>
+          <li><b>Laura Wexler</b> <span class="m">(Yale) — visual-culture / American studies; <i>Tender Violence</i> (2000), the “imperial sentimental narrative” — a touchstone for postcolonial critiques of transnational adoption.</span></li>
+        </ul>
+        <p class="rk" style="margin-top:14px">Policy-history sources (within “From Denial to Disproportionality”)</p>
+        <ul>
+          <li>Roberts, D. E. (2002). <i>Shattered bonds: The color of child welfare.</i> Basic Civitas Books.</li>
+          <li>Chibnall, S., et al. (2003). <i>Children of color in the child welfare system.</i> U.S. HHS, Children’s Bureau.</li>
+          <li>Harp, K. L. H., &amp; Bunting, A. M. (2020). The racialized nature of child welfare policies. <span class="m"><i>Social Politics, 27</i>(2), 258–281.</span></li>
+          <li>Gourdine, R. M. (2019) <span class="m">·</span> Radel, L., &amp; Kalisher, A. (2021) <span class="m">— cited as author-year (ASPE/HHS).</span></li>
+        </ul>
+      </div>
+
+      <div class="refcard">
+        <p class="rk">Clinical training pipelines</p>
+        <ul>
+          <li><b>TAC — Training for Adoption Competency</b> <span class="m">via C.A.S.E. (see the directory card above).</span> <a href="https://adoptionsupport.org/national-directory/" target="_blank" rel="noopener noreferrer">directory</a></li>
+          <li><b>NTI — National Adoption Competency Mental Health Training Initiative</b> <span class="m">(30-hour web-based training).</span> <a href="https://adoptionsupport.org/case-training-institute/nti/aboutnti/" target="_blank" rel="noopener noreferrer">about NTI</a></li>
+          <li><b>TBRI</b> <span class="m">and other attachment- and trauma-focused adaptations.</span> <a href="https://child.tcu.edu/" target="_blank" rel="noopener noreferrer">Karyn Purvis Institute</a></li>
+          <li><b>Systemic / family-systems models.</b></li>
+          <li><b>Consultation with adoptee clinicians</b> <span class="m">— named by participants as the interpretive lens they seek out.</span></li>
+        </ul>
+      </div>
+
+      <div class="refcard wide">
+        <p class="rk">Policy, legal &amp; program record</p>
+        <ul>
+          <li><b>NABSW (1972)</b> — National Association of Black Social Workers position statement opposing transracial adoption of Black children; called for preserving Black families, kinship networks, and identity. <a href="https://www.nabsw.org/history" target="_blank" rel="noopener noreferrer">NABSW</a></li>
+          <li><b>CAPTA (1974)</b> — Child Abuse Prevention &amp; Treatment Act. Federal definitions, mandatory reporting, CPS funding; critiqued for a vague “neglect” standard that proxies poverty. <a href="https://acf.gov/cb/law-regulation/child-abuse-prevention-and-treatment-act-capta" target="_blank" rel="noopener noreferrer">Children's Bureau</a></li>
+          <li><b>ICWA (1978)</b> — Indian Child Welfare Act. Tribal authority over Native child custody; critiqued for having no enforcement body. <a href="https://www.bia.gov/bia/ois/dhs/icwa" target="_blank" rel="noopener noreferrer">BIA</a></li>
+          <li><b>MEPA (1994) + IEPA (1996)</b> — Multiethnic Placement Act &amp; Interethnic Adoption Provisions; made placement effectively race-blind. <a href="https://www.hhs.gov/civil-rights/for-individuals/special-topics/adoption/interethnic-adoption-provisions/index.html" target="_blank" rel="noopener noreferrer">HHS OCR</a></li>
+          <li><b>ASFA (1997)</b> — Adoption &amp; Safe Families Act. Adoption bonuses and the “15 of 22 months” termination clock. <a href="https://www.congress.gov/bill/105th-congress/house-bill/867" target="_blank" rel="noopener noreferrer">Congress.gov</a></li>
+          <li><b>FFPSA (2018)</b> — Family First Prevention Services Act. First turn of Title IV-E money toward prevention. <a href="https://capacity.childwelfare.gov/about/cb-priorities/family-first-prevention" target="_blank" rel="noopener noreferrer">Children's Bureau</a></li>
+          <li><b>Minnesota African American Family Preservation &amp; Child Welfare Disproportionality Act — SF 716 (2024)</b>, Minn. Stat. §§ 260.61–260.693. Prevention-through-policy; rolling out in Hennepin &amp; Ramsey Counties. <a href="https://www.revisor.mn.gov/statutes/cite/260.61" target="_blank" rel="noopener noreferrer">Minn. Stat.</a></li>
+          <li><b>Louisiana OBC access — Act No. 470 of 2022 (HB 450)</b>, amending La. R.S. 40:73. Adults 24+ may obtain their own original birth certificate. <a href="https://ldh.la.gov/page/adoptee-preadoption-certificate" target="_blank" rel="noopener noreferrer">LA Health</a></li>
+          <li><b>EmPwR (Empower Parenting with Resources)</b> — Illinois DCFS + Brightpoint; the largest child-welfare guaranteed-income pilot in the U.S. <a href="https://news.illinois.edu/u-of-i-led-project-to-assess-whether-financial-help-prevents-repeated-child-maltreatment/" target="_blank" rel="noopener noreferrer">U of Illinois</a></li>
+          <li><b>Positions in the field:</b> Prevention (Toland, J. Kim, Samuels, Baden, McKee) · Reform (<a href="https://nccpr.org/" target="_blank" rel="noopener noreferrer">NCCPR</a>, RISE) · Abolition (<a href="https://upendmovement.org/" target="_blank" rel="noopener noreferrer">the upEND movement</a>).</li>
+        </ul>
+      </div>
+
+      <div class="refcard wide">
+        <p class="rk">Data sources</p>
+        <ul>
+          <li><b>AFCARS</b> (Children's Bureau, ACF) — 328,947 children in foster care (Sept. 30, 2024); 505,682 served across FY2024. <span class="m">·</span> <b>KIDS COUNT</b> (Annie E. Casey Foundation) <span class="m">·</span> <b>CDC / NCHS</b> vital-statistics files. Louisiana ≈ 4,000 children in state custody (per the <i>Jacob B. v. Landry</i> complaint; DCFS's HCR-74 report is the authoritative figure).</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <details class="about">
+    <summary>How to use this directory &amp; an important note on limitations</summary>
+    <p>“Adoptee-identifying” means the clinician has publicly stated they are an adopted person and works with the adoption constellation. Inclusion is <strong>not an endorsement</strong> or a guarantee of licensure, availability, or fit — always verify current credentials and ask about adoption-competent, lifespan-oriented care. Where a state shows a gap, that reflects the real, uneven supply of adoptee-centered care (rural, low-income, and non-White adoptees are most affected) — telehealth from a neighboring state or a national directory is often the nearest option.</p>
+    <p><strong>On adoption-competency training (TAC / NTI):</strong> completion denotes a clinician’s <em>own</em> preparation and stated competency in adoption work — not measured outcomes for the adoptees they treat, and not an endorsement of any individual therapist. Treat it as a starting point for vetting, not a guarantee of fit or quality.</p>
+    <p>This list is a living document; corrections and additions are welcome below.</p>
+  </details>
+</main>
+
+<footer class="foot"><div class="wrap">
+  <h2>Know a resource we should add?</h2>
+  <p>Adoptee clinicians, adoptee-led groups, and constellation-serving organizations across LA, MS, AL, FL, and TX are welcome. Send a name, location, website, and adoption connection.</p>
+  <a class="add" href="mailto:adoptiontraumaspectrum@gmail.com?subject=Adoptee-Centered%20Resources%20%E2%80%94%20resource%20to%20add&amp;body=Name%3A%20%0AState(s)%3A%20%0ACity%2Ftelehealth%3A%20%0AWebsite%20or%20LinkedIn%3A%20%0AAdoption%20connection%20(e.g.%2C%20adoptee-identifying)%3A%20%0ASpecialties%3A%20%0AAnything%20else%20we%20should%20know%3A%20">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"></path><path d="M4 6l8 6 8-6"></path></svg>
+    Request to be added
+  </a>
+  <p class="fine">Compiled for the <em>Understanding the Adoption Trauma Spectrum</em> project · resources verified at time of publication. Not medical, legal, or crisis advice — if you are in crisis, call or text <strong>988</strong>.</p>
+</div></footer>
+
+<script>
+const DATA = [
+{"state":"National","cat":"Directory","name":"National Adoptee-Therapist Directory","who":"Beyond Words Psychological Services · Dr. Chaitra Wirta-Leiker (transracial, international adoptee)","loc":"U.S.-wide · searchable by state","blurb":"The core directory of licensed U.S. clinicians who <em>identify as adoptees</em> and work with the adoption constellation. Start here when a state below is thin.","link":"https://growbeyondwords.com/adoptee-therapist-directory/","label":"Open the directory"},
+{"state":"National","cat":"Training","name":"Adoption-Competent (TAC / NTI-Trained) Clinician Directory *","who":"Center for Adoption Support and Education (C.A.S.E.)","loc":"U.S.-wide · searchable by state","blurb":"Find therapists who have completed C.A.S.E. adoption-competency training — the 72-hour Training for Adoption Competency (TAC) and/or the web-based National Adoption Competency Mental Health Training Initiative (NTI). Useful where an adoptee-identifying clinician isn&rsquo;t available locally.<span class='aster'>* Completion denotes a clinician&rsquo;s <em>own</em> training and stated competency in adoption work — not measured outcomes for the adoptees they treat. Inclusion is not an endorsement of any individual therapist.</span>","link":"https://adoptionsupport.org/national-directory/","label":"Open TAC / NTI directory"},
+{"state":"National","cat":"Community","name":"Angela Tucker — The Adopted Life & Adoptee Mentoring Society","who":"Adoptee author, speaker; founder of the Adoptee Mentoring Society (2022)","loc":"Virtual · nationwide mentoring for adopted youth & adults","blurb":"Adoptee-led mentoring, writing, and community — a space where adoptees are &ldquo;fully seen, heard, and understood.&rdquo;","link":"https://www.angelatucker.com/","label":"Visit site","alt":["LinkedIn","https://www.linkedin.com/in/theadoptedlife"]},
+{"state":"National","cat":"Community","name":"Adoptees On (podcast)","who":"Adoptee-hosted podcast","loc":"Listen anywhere","blurb":"Adult adoptees discuss search, reunion, secondary rejection, and identity — a free, ongoing psychoeducation resource for clients between sessions.","link":"https://www.adopteeson.com/","label":"Listen"},
+{"state":"National","cat":"Records & Rights","name":"National Center for Enhanced Post-Adoption Support","who":"Federally supported post-adoption technical-assistance center","loc":"State-by-state post-adoption support profiles","blurb":"State profiles of publicly funded post-adoption and post-permanency supports — useful for locating in-state services and telehealth.","link":"https://postadoptioncenter.org/","label":"State profiles"},
+{"state":"National","cat":"Records & Rights","name":"Adoptee Rights Law Center — State OBC Laws","who":"Gregory Luce, JD (adoptee attorney) · Adoptee United","loc":"All 50 states + D.C.","blurb":"The clearest state-by-state map of who can access their <em>original birth certificate</em> — and the restrictions that remain. In Louisiana, adults 24+ have an unrestricted right to their OBC (Act 470 of 2022; La. R.S. 40:73). Use it to answer a client's records question accurately.","link":"https://adopteerightslaw.com/","label":"Check your state"},
+{"state":"National","cat":"Policy","name":"upEND Movement","who":"Abolitionist child-welfare movement (Alan Dettlaff et al.)","loc":"National · political education & resources","blurb":"Names the child-welfare system &ldquo;family policing&rdquo; and organizes toward abolition and an unconditional safety net. One of the field's three positions (alongside reform and prevention) covered in the training.","link":"https://upendmovement.org/","label":"Learn more"},
+{"state":"National","cat":"Policy","name":"National Coalition for Child Protection Reform (NCCPR)","who":"Child-welfare reform advocacy organization","loc":"National · issue papers & policy analysis","blurb":"The &ldquo;reform&rdquo; position from the training: keep the system, change what it rewards — fix the incentives that drive removal and speed. Issue papers on poverty, racial bias, mandatory reporting, and family preservation.","link":"https://nccpr.org/","label":"Issue papers"},
+{"state":"Louisiana","cat":"Clinician","name":"Melissa LaCour, LPC","who":"Same-race domestic adoptee · adoption-competent (C.A.S.E.-trained)","loc":"Lafayette, LA (in person) + LA telehealth","blurb":"Adoptee therapist working with adoptees, adoptive parents, and birth parents on identity, attachment, relationships, and reunion.","link":"https://www.melissalacour.com/","label":"Visit site","alt":["LinkedIn","https://www.linkedin.com/in/melissa-lacour-lpc-55a6a9b9/"]},
+{"state":"Louisiana","cat":"Clinician","name":"Maggie Credeur, LCSW","who":"Same-race domestic adoptee · in reunion","loc":"Louisiana","blurb":"Adoptee clinician (Credeur Counseling) focused on adoption and gender-related concerns with adults.","link":"https://growbeyondwords.com/louisiana/","label":"View in LA directory"},
+{"state":"Louisiana","cat":"Directory","name":"Louisiana Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Louisiana","blurb":"The full, maintained list of adoptee-identifying clinicians licensed in Louisiana.","link":"https://growbeyondwords.com/louisiana/","label":"Open LA list"},
+{"state":"Louisiana","cat":"Records & Rights","name":"Louisiana DCFS — Adoption & Records","who":"Louisiana Dept. of Children & Family Services (state agency)","loc":"Statewide","blurb":"State adoption program, subsidy support, and the process for records and post-adoption assistance in Louisiana.","link":"https://www.dcfs.louisiana.gov/page/adoption","label":"LA DCFS"},
+{"state":"Mississippi","cat":"Note","name":"No adoptee-identifying clinician currently listed","who":"Access gap — Mississippi","loc":"Mississippi","blurb":"As of this compilation, no adoptee-<em>identifying</em> clinician is listed in the national directory for Mississippi. Use the National Adoptee-Therapist Directory for telehealth options, the TAC/NTI directory for adoption-competent care, and the post-adoption center for in-state supports.","link":"https://growbeyondwords.com/adoptee-therapist-directory/","label":"Find telehealth (national)"},
+{"state":"Alabama","cat":"Note","name":"No in-state adoptee-identifying clinician listed","who":"Access gap — Alabama","loc":"Alabama","blurb":"The Alabama directory page currently lists national/telehealth options rather than an in-state adoptee clinician. Check it periodically as listings expand, and use the national directory for telehealth.","link":"https://growbeyondwords.com/alabama/","label":"Open AL page"},
+{"state":"Florida","cat":"Clinician","name":"Robyn MooYoung, PsyD","who":"Transracial, international adoptee","loc":"Maitland, FL + FL telehealth","blurb":"Adoptee psychologist (MooYoung Psychological Health) working with adults on trauma, grief, and complex family dynamics.","link":"https://growbeyondwords.com/florida/","label":"View in FL directory"},
+{"state":"Florida","cat":"Directory","name":"Florida Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Florida","blurb":"The full, maintained list of adoptee-identifying clinicians licensed in Florida.","link":"https://growbeyondwords.com/florida/","label":"Open FL list"},
+{"state":"Texas","cat":"Clinician","name":"Pam Greenstone, LPC — Deep Roots Counseling","who":"Adoptee · works with adult adoptees & the whole constellation","loc":"Austin, TX + TX telehealth","blurb":"Adoptee therapist supporting adult adoptees through identity, reunion, and relationships; counseling in Austin since 2002.","link":"https://www.pgreenstonetherapy.com/","label":"Visit site"},
+{"state":"Texas","cat":"Clinician","name":"Kimberley Mead, LPC-S · Brooke Robb, LPC · Kate Coffield, LCSW","who":"Adoptee clinicians (Austin) · search & reunion, attachment injuries, identity","loc":"Austin, TX + TX telehealth","blurb":"Several adoptee-identifying clinicians in the Austin area offer individual and group work, including in-person adoptee groups and search-and-reunion support.","link":"https://growbeyondwords.com/texas/","label":"View in TX directory"},
+{"state":"Texas","cat":"Community","name":"Adoption Knowledge Affiliates (Austin)","who":"Adoptee/constellation nonprofit","loc":"Austin, TX + virtual","blurb":"Support meetings, referral lists, and constellation education; a hub for Texas adoptees and families.","link":"https://adoptionknowledge.org/resources/","label":"Resources"},
+{"state":"Texas","cat":"Directory","name":"Texas Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Texas","blurb":"The full, maintained list of adoptee-identifying clinicians licensed in Texas.","link":"https://growbeyondwords.com/texas/","label":"Open TX list"},
+{"state":"Alabama","cat":"Directory","name":"Alabama Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Alabama","blurb":"State page of adoptee-identifying clinicians licensed in Alabama. In-state supply is currently thin; pair with the national directory (telehealth) and the TAC/NTI directory.","link":"https://growbeyondwords.com/alabama/","label":"Open AL list"},
+{"state":"Arkansas","cat":"Directory","name":"Arkansas Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Arkansas","blurb":"State page of adoptee-identifying clinicians licensed in Arkansas. Where in-state listings are thin, use the national directory for telehealth and the TAC/NTI directory for adoption-competent care.","link":"https://growbeyondwords.com/arkansas/","label":"Open AR list"},
+{"state":"Georgia","cat":"Clinician","name":"Kate Murphy, LCSW","who":"Same-race domestic adoptee · in reunion","loc":"Atlanta, GA + GA telehealth","blurb":"Adoptee therapist (Kate Murphy Therapy) working with adults and couples on attachment, identity, <em>search &amp; reunion</em>, relationships, and PTSD/C-PTSD; EMDR and Lifespan Integration.","link":"https://growbeyondwords.com/georgia/","label":"View in GA directory"},
+{"state":"Georgia","cat":"Directory","name":"Georgia Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Georgia","blurb":"The full, maintained list of adoptee-identifying clinicians licensed in Georgia.","link":"https://growbeyondwords.com/georgia/","label":"Open GA list"},
+{"state":"Kentucky","cat":"Directory","name":"Kentucky Adoptee-Therapist Directory","who":"Beyond Words Psychological Services · incl. telehealth providers","loc":"Kentucky","blurb":"State page listing adoptee-identifying clinicians available to Kentucky clients (including telehealth providers such as Caela Day, PsyD). Pair with the national directory and the TAC/NTI directory.","link":"https://growbeyondwords.com/kentucky/","label":"Open KY list"},
+{"state":"Mississippi","cat":"Directory","name":"Mississippi Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Mississippi","blurb":"State page of adoptee-identifying clinicians for Mississippi. In-state supply is currently very thin; the national directory (telehealth) and the TAC/NTI directory are often the nearest options.","link":"https://growbeyondwords.com/mississippi/","label":"Open MS list"},
+{"state":"Missouri","cat":"Directory","name":"Missouri Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Missouri","blurb":"State page of adoptee-identifying clinicians licensed in Missouri. Where in-state listings are thin, use the national directory for telehealth.","link":"https://growbeyondwords.com/missouri/","label":"Open MO list"},
+{"state":"Oklahoma","cat":"Directory","name":"Oklahoma Adoptee-Therapist Directory","who":"Beyond Words Psychological Services · incl. telehealth providers","loc":"Oklahoma","blurb":"State page listing adoptee-identifying clinicians available to Oklahoma clients (including telehealth providers such as Caela Day, PsyD). Pair with the national and TAC/NTI directories.","link":"https://growbeyondwords.com/oklahoma/","label":"Open OK list"},
+{"state":"South Carolina","cat":"Directory","name":"South Carolina Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"South Carolina","blurb":"State page of adoptee-identifying clinicians for South Carolina. In-state supply is currently thin; the national directory (telehealth) is often the nearest option.","link":"https://growbeyondwords.com/south-carolina/","label":"Open SC list"},
+{"state":"Tennessee","cat":"Directory","name":"Tennessee Adoptee-Therapist Directory","who":"Beyond Words Psychological Services","loc":"Tennessee","blurb":"State page of adoptee-identifying clinicians licensed in Tennessee. Where in-state listings are thin, use the national directory for telehealth and the TAC/NTI directory for adoption-competent care.","link":"https://growbeyondwords.com/tennessee/","label":"Open TN list"},
+{"state":"National","cat":"Foundations","name":"Adoptee-centered reading & frameworks","who":"For clinicians & clients","loc":"Books & models","blurb":"Verrier, <em>The Primal Wound</em> · Herman, <em>Trauma and Recovery</em> · Boss, <em>Ambiguous Loss</em> · Baden on adoption microaggressions · the Adoptee Consciousness Model (Branco et al.) · critical adoption studies (Samuels, Sisson, Kim, McGinnis, Goodwin).","link":"https://www.angelatucker.com/","label":"Adoptee voices"}
+];
+const STATES = ["All","Alabama","Arkansas","Florida","Georgia","Kentucky","Louisiana","Mississippi","Missouri","Oklahoma","South Carolina","Tennessee","Texas","National"];
+let active = "All", query = "";
+
+const norm = s => (s||"").toLowerCase();
+const chips = document.getElementById('chips');
+STATES.forEach(s=>{
+  const n = s==="All" ? DATA.length : DATA.filter(d=>d.state===s).length;
+  const b=document.createElement('button');
+  b.className='chip'; b.setAttribute('aria-pressed', s==="All");
+  b.innerHTML = s + `<span class="n">${n}</span>`;
+  b.onclick=()=>{active=s;[...chips.children].forEach(c=>c.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');render();};
+  chips.appendChild(b);
+});
+document.getElementById('q').addEventListener('input',e=>{query=norm(e.target.value);render();});
+
+function tagClass(c){return c==="Records & Rights"?"Records":c;}
+function icon(cat){return ({Clinician:"◆",Community:"❖",Directory:"▤",Training:"✦",Foundations:"❦",Policy:"⚖",Note:"!","Records & Rights":"§"})[cat]||"◆";}
+
+function card(d){
+  const el=document.createElement('article');
+  el.className='card'+(d.cat==="Note"?" note":"");
+  let links = "";
+  if(!d.nolink){
+    links += `<a class="btn" href="${d.link}" target="_blank" rel="noopener noreferrer">${d.label||"Visit"} <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg></a>`;
+  }
+  if(d.alt){links += `<a class="btn alt" href="${d.alt[1]}" target="_blank" rel="noopener noreferrer">${d.alt[0]}</a>`;}
+  el.innerHTML = `
+    <div class="row">
+      <div class="dot">${icon(d.cat)}</div>
+      <h3>${d.name}</h3>
+    </div>
+    <div class="row">
+      <span class="tag ${tagClass(d.cat)}">${d.cat}</span>
+      <span class="who">${d.who}</span>
+    </div>
+    <div class="loc">📍 ${d.loc}</div>
+    <p class="blurb">${d.blurb}</p>
+    <div class="links">${links}</div>`;
+  return el;
+}
+
+function render(){
+  const grid=document.getElementById('grid'); grid.innerHTML="";
+  let items = DATA.filter(d=>(active==="All"||d.state===active));
+  if(query){
+    items = items.filter(d=>[d.name,d.who,d.loc,d.blurb,d.state,d.cat].some(f=>norm(f).includes(query)));
+  }
+  document.getElementById('count').textContent =
+    `${items.length} resource${items.length!==1?"s":""}${active!=="All"?" · "+active:""}${query?` · “${query}”`:""}`;
+  if(!items.length){grid.innerHTML='<div class="empty">No matches. Try a national directory or clear your search.</div>';return;}
+  if(active==="All"){
+    const order=["Alabama","Arkansas","Florida","Georgia","Kentucky","Louisiana","Mississippi","Missouri","Oklahoma","South Carolina","Tennessee","Texas","National"];
+    order.forEach(st=>{
+      const g=items.filter(d=>d.state===st); if(!g.length)return;
+      const h=document.createElement('div'); h.className='statehead';
+      const subs={Alabama:"limited in-state supply", Arkansas:"limited in-state supply", Florida:"", Georgia:"", Kentucky:"telehealth options", Louisiana:"", Mississippi:"limited in-state supply", Missouri:"telehealth options", Oklahoma:"telehealth options", "South Carolina":"limited in-state supply", Tennessee:"limited in-state supply", Texas:"", National:"works anywhere / telehealth"};
+      h.innerHTML=`${st} <span class="sub">${subs[st]||""}</span>`;
+      grid.appendChild(h);
+      g.forEach((d,i)=>{const c=card(d);c.style.animationDelay=(i*30)+"ms";grid.appendChild(c);});
+    });
+  } else {
+    items.forEach((d,i)=>{const c=card(d);c.style.animationDelay=(i*30)+"ms";grid.appendChild(c);});
+  }
+}
+render();
+</script>
+
+
+
+</body></html>
