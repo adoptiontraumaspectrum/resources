@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<!-- saved from url=(0079)file:///C:/Users/atola/Downloads/adoption-lifespan-activation-framework(4).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Adoption Lifespan Activation Framework | Ashley M. Toland, DSW, LCSW</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#213a30;
+    --forest-2:#2b4a3c;
+    --forest-line:#3a5a4a;
+    --mauve:#b0a19d;
+    --mauve-deep:#a3928e;
+    --parchment:#f6f1e9;
+    --cream:#fbf8f2;
+    --ink:#2a2320;
+    --ink-soft:#5c524c;
+    --rust:#9e5539;
+    --rust-deep:#834330;
+    --gold:#bd9a44;
+    --gold-soft:#cdae6b;
+    --sage:#6f7a57;
+    --olive:#8a8348;
+    --slate:#67707f;
+    --plum:#6e5a66;
+    --tan:#a98a5c;
+
+    --f-display:"Playfair Display",Georgia,serif;
+    --f-body:"Spectral",Georgia,serif;
+    --f-util:"Hanken Grotesk",system-ui,sans-serif;
+
+    --maxw:1120px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--f-body);
+    color:var(--ink);
+    background:var(--mauve);
+    line-height:1.65;
+    font-size:18px;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .eyebrow{
+    font-family:var(--f-util);
+    font-weight:600;
+    font-size:.72rem;
+    letter-spacing:.28em;
+    text-transform:uppercase;
+  }
+
+  h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.08;letter-spacing:-.01em}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ===================== HERO ===================== */
+  .hero{
+    background:#2f2622;
+    color:var(--parchment);
+    padding:74px 0 92px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 15% -10%, rgba(189,154,68,.10), transparent 55%),
+      radial-gradient(90% 80% at 100% 120%, rgba(158,85,57,.12), transparent 60%);
+    pointer-events:none;
+  }
+  .hero .wrap{position:relative}
+  .hero .eyebrow{color:var(--gold-soft)}
+  .hero h1{
+    font-size:clamp(2.5rem,6.4vw,5.1rem);
+    margin:.5em 0 .38em;
+    color:var(--parchment);
+    max-width:15ch;
+  }
+  .hero h1 em{font-style:italic;color:var(--gold-soft);font-weight:600}
+  .hero .lede{
+    font-size:clamp(1.12rem,2vw,1.42rem);
+    font-weight:300;
+    color:#e6ded0;
+    max-width:44ch;
+    line-height:1.5;
+  }
+  .byline{
+    font-family:var(--f-util);
+    font-size:.8rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:#bfb39f;
+    margin-top:26px;
+    display:inline-flex;align-items:center;gap:12px;
+  }
+  .byline::before{content:"";width:30px;height:1px;background:var(--gold);display:inline-block}
+
+  /* ---------- signature: the lifespan ---------- */
+  .lifespan{margin-top:64px;position:relative}
+  .lifespan .cap{
+    font-family:var(--f-util);font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;
+    color:#b3a794;margin-bottom:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .lifespan .cap span{color:var(--gold-soft)}
+
+  .line-track{position:relative;padding:14px 0}
+  .rail{
+    position:absolute;left:0;right:0;top:50%;height:1.5px;
+    background:linear-gradient(90deg,transparent,#5a4c40 6%,#5a4c40 94%,transparent);
+    transform:scaleX(0);transform-origin:left center;
+    transition:transform 1.3s cubic-bezier(.2,.7,.2,1) .2s;
+  }
+  .line-track.in .rail{transform:scaleX(1)}
+
+  .points{
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    position:relative;
+  }
+  .pt{
+    position:relative;
+    display:flex;flex-direction:column;align-items:center;
+    min-height:190px;justify-content:center;
+    opacity:0;transform:translateY(8px);
+    transition:opacity .6s ease,transform .6s ease;
+  }
+  .line-track.in .pt{opacity:1;transform:none}
+  .node{
+    width:15px;height:15px;border-radius:50%;
+    background:#2f2622;
+    border:1.5px solid var(--gold);
+    position:relative;z-index:2;flex:none;
+    box-shadow:0 0 0 5px rgba(47,38,34,1);
+  }
+  .node::after{
+    content:"";position:absolute;inset:3px;border-radius:50%;
+    background:var(--gold-soft);opacity:0;transition:opacity .5s ease;
+  }
+  .pt.on .node::after{opacity:1}
+  .stem{width:1px;background:#5a4c40;flex:none}
+  .lbl{ text-align:center;max-width:12ch }
+  .lbl .name{font-family:var(--f-display);font-size:.98rem;font-weight:600;color:var(--parchment);line-height:1.15}
+  .lbl .sub{font-family:var(--f-util);font-size:.66rem;letter-spacing:.02em;color:#a89a88;margin-top:5px;line-height:1.3}
+
+  /* up variant */
+  .pt.up{flex-direction:column}
+  .pt.up .lbl{order:0;margin-bottom:12px}
+  .pt.up .stem{order:1;height:34px}
+  .pt.up .node{order:2}
+  /* down variant */
+  .pt.down .node{order:0}
+  .pt.down .stem{order:1;height:34px}
+  .pt.down .lbl{order:2;margin-top:12px}
+
+  /* ===================== ORIGIN ===================== */
+  .band{padding:96px 0}
+  .band.parchment{background:var(--parchment)}
+  .band.mauve{background:var(--mauve)}
+  .band.forest{background:var(--forest);color:var(--parchment)}
+
+  .measure{max-width:64ch}
+  .section-eyebrow{color:var(--rust)}
+  .band.forest .section-eyebrow{color:var(--gold-soft)}
+
+  .lead-h{
+    font-size:clamp(1.9rem,4vw,3rem);
+    margin:.42em 0 .7em;
+    max-width:17ch;
+  }
+  .lead-h em{font-style:italic}
+  .band.forest .lead-h{color:var(--parchment)}
+
+  .prose p{margin-bottom:1.15em;color:var(--ink-soft);font-size:1.12rem}
+  .band.forest .prose p{color:#d9d0c2}
+  .prose p .hl{color:var(--ink);font-weight:500;font-style:italic}
+  .band.forest .prose p .hl{color:var(--gold-soft)}
+  .prose strong{color:var(--ink);font-weight:600}
+
+  .pull{
+    font-family:var(--f-display);
+    font-style:italic;
+    font-size:clamp(1.35rem,2.6vw,1.9rem);
+    line-height:1.35;
+    color:var(--rust);
+    border-left:2px solid var(--gold);
+    padding-left:24px;
+    margin:14px 0 0;
+    max-width:32ch;
+  }
+
+  /* ===================== FRAMEWORK STACK ===================== */
+  .fw-head{text-align:center;max-width:60ch;margin:0 auto 12px}
+  .fw-head .lead-h{margin-left:auto;margin-right:auto;max-width:none}
+  .fw-note{
+    font-family:var(--f-util);text-align:center;color:var(--ink-soft);
+    font-size:.95rem;letter-spacing:.01em;max-width:52ch;margin:0 auto 54px;
+  }
+  .fw-note b{color:var(--rust);font-weight:600}
+
+  .layer{
+    background:var(--cream);
+    border:1px solid rgba(42,35,32,.09);
+    border-radius:14px;
+    padding:34px 34px 38px;
+    box-shadow:0 14px 40px rgba(42,35,32,.08);
+  }
+  .layer-tag{
+    display:flex;align-items:center;gap:12px;margin-bottom:6px;
+  }
+  .layer-tag .sq{width:12px;height:12px;border-radius:3px;flex:none}
+  .layer-tag .k{font-family:var(--f-util);font-weight:700;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+  .layer h3{font-size:1.6rem;margin:.1em 0 .2em}
+  .layer .desc{color:var(--ink-soft);font-size:1.02rem;max-width:60ch}
+
+  .subhead{
+    font-family:var(--f-util);font-weight:700;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--ink-soft);margin:26px 0 14px;
+  }
+
+  .cards{display:grid;gap:14px}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .card{
+    background:var(--parchment);
+    border:1px solid rgba(42,35,32,.08);
+    border-radius:9px;
+    padding:15px 16px 16px;
+  }
+  .card .who{font-family:var(--f-body);font-style:italic;font-size:.82rem;color:var(--ink-soft);display:flex;align-items:center;gap:8px;margin-bottom:5px}
+  .card .who .dot{width:9px;height:9px;border-radius:50%;flex:none}
+  .card .what{font-family:var(--f-display);font-weight:600;font-size:1.05rem;line-height:1.2}
+
+  /* spectrum chips */
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .chip{
+    background:var(--parchment);border:1px solid rgba(42,35,32,.1);border-radius:999px;
+    padding:9px 16px;font-family:var(--f-util);font-weight:500;font-size:.9rem;
+    display:inline-flex;align-items:center;gap:9px;
+  }
+  .chip .dot{width:9px;height:9px;border-radius:50%;flex:none}
+
+  /* domains */
+  .domains{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:8px}
+  .dom{
+    background:var(--parchment);border:1px solid rgba(42,35,32,.08);border-radius:9px;
+    padding:18px 16px;position:relative;
+  }
+  .dom .num{
+    width:30px;height:30px;border-radius:50%;color:#fff;font-family:var(--f-util);font-weight:700;
+    font-size:.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:12px;
+  }
+  .dom h4{font-family:var(--f-display);font-weight:600;font-size:1.06rem;line-height:1.15;margin-bottom:8px}
+  .dom p{font-size:.86rem;color:var(--ink-soft);line-height:1.45}
+  .dom .tags{margin-top:9px;font-family:var(--f-util);font-size:.72rem;letter-spacing:.02em;color:var(--sage);font-weight:600}
+  .cont{display:inline-flex;gap:6px;margin-top:9px}
+  .cont span{font-family:var(--f-util);font-size:.68rem;font-weight:600;padding:3px 9px;border-radius:999px}
+  .cont .h{background:rgba(111,122,87,.18);color:var(--sage)}
+  .cont .c{background:rgba(158,85,57,.16);color:var(--rust)}
+
+  /* connectors */
+  .connector{display:flex;flex-direction:column;align-items:center;gap:0;padding:6px 0}
+  .connector .seg{width:1.5px;height:26px;background:var(--mauve-deep)}
+  .band.forest .connector .seg{background:var(--forest-line)}
+  .pill{
+    font-family:var(--f-util);font-style:normal;font-size:.78rem;letter-spacing:.06em;
+    background:var(--forest);color:var(--parchment);
+    padding:7px 20px;border-radius:999px;font-weight:600;
+    box-shadow:0 6px 18px rgba(33,58,48,.28);
+  }
+  .pill em{font-style:italic;color:var(--gold-soft);font-weight:500}
+
+  /* ===================== PLAIN LANGUAGE ===================== */
+  .duo{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  .explain{
+    background:rgba(246,241,233,.55);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:14px;padding:32px 30px;
+  }
+  .explain .word{
+    font-family:var(--f-display);font-style:italic;font-size:1.7rem;color:var(--rust);margin-bottom:4px;
+  }
+  .explain .role{font-family:var(--f-util);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px}
+  .explain p{font-size:1.02rem;color:var(--ink-soft)}
+  .explain p+p{margin-top:12px}
+  .explain p b{color:var(--ink);font-weight:600}
+
+  .anchor-box{
+    margin-top:48px;background:var(--forest-2);border:1px solid var(--forest-line);
+    border-radius:14px;padding:30px 32px;color:#dcd3c5;
+  }
+  .anchor-box .t{font-family:var(--f-display);font-weight:700;color:var(--gold-soft);font-size:1.2rem;margin-bottom:8px}
+  .anchor-box p{font-size:1.02rem;color:#cfc6b8}
+  .anchor-box .names{margin-top:12px;font-family:var(--f-util);font-size:.82rem;letter-spacing:.02em;color:#a9b6a6}
+
+  /* ===================== CLOSING ===================== */
+  .close{background:#2f2622;color:var(--parchment);padding:110px 0}
+  .close .big{
+    font-family:var(--f-display);font-weight:600;font-style:italic;
+    font-size:clamp(1.6rem,3.4vw,2.7rem);line-height:1.34;max-width:24ch;margin:0 auto;text-align:center;
+  }
+  .close .big b{font-style:normal;font-weight:700;color:var(--gold-soft)}
+
+  /* ===================== FOOTER ===================== */
+  footer{background:#241d19;color:#a89e90;padding:44px 0 52px;font-family:var(--f-util)}
+  footer .cr{font-size:.86rem;color:#c4b9a9;letter-spacing:.02em}
+  footer .ip{font-size:.74rem;line-height:1.7;color:#8a8073;max-width:78ch;margin-top:14px}
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:900px){
+    .g4{grid-template-columns:repeat(2,1fr)}
+    .g3{grid-template-columns:1fr}
+    .domains{grid-template-columns:repeat(2,1fr)}
+    .duo{grid-template-columns:1fr}
+    /* lifespan → vertical rail */
+    .lifespan .line-track{padding:0}
+    .rail{left:22px;right:auto;top:0;bottom:0;width:1.5px;height:auto;
+      background:linear-gradient(180deg,transparent,#5a4c40 4%,#5a4c40 96%,transparent);
+      transform:scaleY(0);transform-origin:top center;transition:transform 1.2s cubic-bezier(.2,.7,.2,1) .2s}
+    .line-track.in .rail{transform:scaleY(1)}
+    .points{grid-template-columns:1fr;gap:6px}
+    .pt,.pt.up,.pt.down{flex-direction:row;align-items:center;min-height:0;padding:12px 0 12px 8px;justify-content:flex-start;gap:20px}
+    .pt .stem,.pt.up .stem,.pt.down .stem{display:none}
+    .pt .node,.pt.up .node,.pt.down .node{order:0}
+    .pt .lbl,.pt.up .lbl,.pt.down .lbl{order:1;text-align:left;max-width:none;margin:0}
+    .lbl .name{font-size:1.06rem}
+    .lbl .sub{font-size:.72rem}
+  }
+  @media (max-width:560px){
+    body{font-size:17px}
+    .band{padding:66px 0}
+    .g4{grid-template-columns:1fr}
+    .domains{grid-template-columns:1fr}
+    .wrap{padding:0 22px}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto!important}
+    .reveal{opacity:1!important;transform:none!important;transition:none!important}
+    .rail{transform:none!important;transition:none!important}
+    .pt{opacity:1!important;transform:none!important;transition:none!important}
+    .pt .node::after{opacity:1!important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow reveal in">The Adoption Across the Lifespan Study</p>
+    <h1 class="reveal in">The Adoption Lifespan <em>Activation</em> Framework</h1>
+    <p class="lede reveal in">A model for understanding how adoption trauma activates at predictable moments across a person's life.</p>
+    <span class="byline reveal in">Developed by Ashley M. Toland, DSW, LCSW</span>
+
+    <div class="lifespan reveal in">
+      <p class="cap">The observation at its center &nbsp;·&nbsp; <span>a lifespan of activation points</span></p>
+      <div class="line-track in" id="track">
+        <div class="rail"></div>
+        <div class="points">
+          <div class="pt up on" style="transition-delay: 0s;"><div class="lbl"><div class="name">Relinquishment</div><div class="sub">Abandonment &amp; worthiness</div></div><div class="stem"></div><div class="node"></div></div>
+          <div class="pt down on" style="transition-delay: 0.07s;"><div class="node"></div><div class="stem"></div><div class="lbl"><div class="name">Pre-verbal</div><div class="sub">Somatic, implicit separation</div></div></div>
+          <div class="pt up on" style="transition-delay: 0.14s;"><div class="lbl"><div class="name">Awareness</div><div class="sub">Self as adoptee</div></div><div class="stem"></div><div class="node"></div></div>
+          <div class="pt down on" style="transition-delay: 0.21s;"><div class="node"></div><div class="stem"></div><div class="lbl"><div class="name">Adolescence</div><div class="sub">Identity &amp; belonging</div></div></div>
+          <div class="pt up on" style="transition-delay: 0.28s;"><div class="lbl"><div class="name">Late discovery</div><div class="sub">Learning outside of early childhood</div></div><div class="stem"></div><div class="node"></div></div>
+          <div class="pt down on" style="transition-delay: 0.35s;"><div class="node"></div><div class="stem"></div><div class="lbl"><div class="name">Parenthood / fertility</div><div class="sub">Imprints reactivated</div></div></div>
+          <div class="pt up on" style="transition-delay: 0.42s;"><div class="lbl"><div class="name">Reunion</div><div class="sub">Hope, risk, renegotiation</div></div><div class="stem"></div><div class="node"></div></div>
+          <div class="pt down on" style="transition-delay: 0.49s;"><div class="node"></div><div class="stem"></div><div class="lbl"><div class="name">Rejection</div><div class="sub">Original loss re-enacted</div></div></div>
+          <div class="pt up on" style="transition-delay: 0.56s;"><div class="lbl"><div class="name">Complicated grief</div><div class="sub">Estrangement or end of life issues</div></div><div class="stem"></div><div class="node"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== ORIGIN ===================== -->
+<section class="band parchment">
+  <div class="wrap measure">
+    <p class="eyebrow section-eyebrow reveal in">Where it began</p>
+    <h2 class="lead-h reveal in">It started as an observation.</h2>
+    <div class="prose">
+      <p class="reveal in">The Spectrum came first. Before there was a framework, there was a pattern that is easy to miss: adoptees are not carrying a single wound from a single moment.</p>
+      <p class="reveal in">The pattern's core claim is that adoption trauma is <span class="hl">an imprint, not an incident</span>. It reactivates rather than simply lingers, and it does so non-linearly. Someone can integrate one activation point while another reopens years later.</p>
+    </div>
+    <blockquote class="pull reveal in">Trauma is not only the original event. It is an imprint that reopens at later relational and identity-shaping moments.</blockquote>
+  </div>
+</section>
+
+<!-- ===================== FROM SPECTRUM TO FRAMEWORK ===================== -->
+<section class="band mauve">
+  <div class="wrap measure">
+    <p class="eyebrow section-eyebrow reveal in">How the framework grew</p>
+    <h2 class="lead-h reveal in">From a pattern to a <em>framework</em></h2>
+    <div class="prose">
+      <p class="reveal in">As the Spectrum unfolded, more questions began to surface. <strong>Why</strong> do these points reactivate? What established scholarship <strong>accounts</strong> for it? And <strong>how</strong> do these reactivations shape a person's development over time?</p>
+      <p class="reveal in">The framework grew up around the Spectrum to answer those three questions. It keeps the Spectrum at the center as the working mechanism, is grounded in strong theoretical foundations, and reveals a developmental pathway with psychosocial impacts and outcomes.</p>
+      <p class="reveal in"><span class="hl">The Spectrum is the engine; the framework is the vehicle engineered around it.</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE FRAMEWORK STACK ===================== -->
+<section class="band parchment">
+  <div class="wrap">
+    <div class="fw-head">
+      <p class="eyebrow section-eyebrow reveal in">The framework</p>
+      <h2 class="lead-h reveal in">Three dimensions, two relationships</h2>
+    </div>
+    <p class="fw-note reveal in">Read it top to bottom. The <b>foundations ground</b> the Spectrum; the <b>Spectrum moderates</b> the developmental domains.</p>
+
+    <!-- LAYER 1 -->
+    <div class="layer reveal in">
+      <div class="layer-tag"><span class="sq" style="background:var(--rust)"></span><span class="k">Theoretical Foundations</span></div>
+      <h3>Why it holds up</h3>
+      <p class="desc">The established scholarship the model rests on: the point where several respected theories converge, rather than a single new claim.</p>
+
+      <div class="subhead">Trauma &amp; Loss</div>
+      <div class="cards g4">
+        <div class="card"><div class="who"><span class="dot" style="background:var(--rust)"></span>Verrier</div><div class="what">Relinquishment Trauma</div></div>
+        <div class="card"><div class="who"><span class="dot" style="background:var(--rust-deep)"></span>Herman</div><div class="what">Complex PTSD</div></div>
+        <div class="card"><div class="who"><span class="dot" style="background:var(--tan)"></span>Boss</div><div class="what">Ambiguous Loss</div></div>
+        <div class="card"><div class="who"><span class="dot" style="background:var(--plum)"></span>Doka</div><div class="what">Disenfranchised Grief</div></div>
+      </div>
+
+      <div class="subhead">Attachment &amp; Identity</div>
+      <div class="cards g3">
+        <div class="card"><div class="who"><span class="dot" style="background:var(--sage)"></span>Bowlby · Ainsworth · Main</div><div class="what">Attachment Theory</div></div>
+        <div class="card"><div class="who"><span class="dot" style="background:var(--olive)"></span>Baden</div><div class="what">Cultural-Racial Identity Model</div></div>
+        <div class="card"><div class="who"><span class="dot" style="background:var(--slate)"></span>Branco et al.</div><div class="what">Adoptee Consciousness Model</div></div>
+      </div>
+    </div>
+
+    <div class="connector reveal in"><div class="seg"></div><div class="pill"><em>grounds</em></div><div class="seg"></div></div>
+
+    <!-- LAYER 2 -->
+    <div class="layer reveal in">
+      <div class="layer-tag"><span class="sq" style="background:var(--sage)"></span><span class="k">The Adoption Trauma Spectrum</span></div>
+      <h3>What reactivates, and when</h3>
+      <p class="desc">The original model at the center of the framework: the predictable activation points across the lifespan. Any one of them can activate or reactivate the developmental process.</p>
+      <div class="chips">
+        <span class="chip"><span class="dot" style="background:var(--rust)"></span>Relinquishment</span>
+        <span class="chip"><span class="dot" style="background:var(--slate)"></span>Pre-verbal</span>
+        <span class="chip"><span class="dot" style="background:var(--olive)"></span>Awareness</span>
+        <span class="chip"><span class="dot" style="background:var(--gold)"></span>Adolescence</span>
+        <span class="chip"><span class="dot" style="background:var(--rust-deep)"></span>Late discovery</span>
+        <span class="chip"><span class="dot" style="background:var(--sage)"></span>Parenthood / fertility</span>
+        <span class="chip"><span class="dot" style="background:var(--tan)"></span>Reunion</span>
+        <span class="chip"><span class="dot" style="background:var(--plum)"></span>Rejection</span>
+        <span class="chip"><span class="dot" style="background:var(--olive)"></span>Complicated grief</span>
+      </div>
+    </div>
+
+    <div class="connector reveal in"><div class="seg"></div><div class="pill"><em>moderates</em></div><div class="seg"></div></div>
+
+    <!-- LAYER 3 -->
+    <div class="layer reveal">
+      <div class="layer-tag"><span class="sq" style="background:var(--gold)"></span><span class="k">Developmental Domains</span></div>
+      <h3>How a life unfolds</h3>
+      <p class="desc">Each stage feeds the next, from the earliest rupture to where a person lands.</p>
+      <div class="domains">
+        <div class="dom"><div class="num" style="background:var(--rust)">1</div><h4>Early Relational Event</h4><p>Relinquishment and pre-verbal experiences create an early relational rupture.</p></div>
+        <div class="dom"><div class="num" style="background:var(--tan)">2</div><h4>Adoption Context</h4><p>Family, culture, genetic mirroring, practices, policies, &amp; systems.</p></div>
+        <div class="dom"><div class="num" style="background:var(--gold)">3</div><h4>Meaning-Making</h4><p>Read through personal, relational, &amp; societal lenses.</p></div>
+        <div class="dom"><div class="num" style="background:var(--sage)">4</div><h4>Psychosocial Processes</h4><p>Three central developmental processes.</p><div class="tags">Identity · Attachment · Belongingness</div></div>
+        <div class="dom"><div class="num" style="background:var(--slate)">5</div><h4>Psychosocial Outcomes</h4><p>Ranging along a continuum.</p><div class="cont"><span class="h">Healthy</span><span class="c">Challenging</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLAIN LANGUAGE ===================== -->
+<section class="band mauve">
+  <div class="wrap">
+    <p class="eyebrow section-eyebrow reveal" style="text-align:center">In plain terms</p>
+    <h2 class="lead-h reveal" style="text-align:center;margin-left:auto;margin-right:auto;max-width:20ch">The Logic</h2>
+
+    <div class="duo">
+      <div class="explain reveal">
+        <div class="word">grounds</div>
+        <div class="role">Foundations → Spectrum</div>
+        <p>The Spectrum is not a standalone idea. It is the place where several respected theories converge: trauma and loss on one side, attachment and identity on the other.</p>
+        <p>That convergence is what <b>grounds</b> means: the model rests on established scholarship, not on a single new claim.</p>
+      </div>
+      <div class="explain reveal">
+        <div class="word">moderates</div>
+        <div class="role">Spectrum → Domains</div>
+        <p>In research terms, a <b>moderator</b> changes the strength or direction of the relationship between two things. A person does not travel in a straight line from that early rupture to a fixed outcome.</p>
+        <p>The activation points sit in the middle and shape <b>how</b> the path unfolds. That is why the outcome is a continuum, not a verdict.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CLOSING ===================== -->
+<section class="close">
+  <div class="wrap">
+    <p class="big reveal">The Spectrum reveals predictable activation points upon which adoption trauma may arise across the lifespan. The Framework examines <b>the how of the lifelong impact of adoption trauma.</b></p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <p class="cr">© 2024–2026 Ashley M. Toland, DSW, LCSW. All rights reserved.</p>
+    <p class="ip">This work is part of the Adoption Across the Lifespan Study and is the intellectual property of Ashley M. Toland, DSW, LCSW. No part of this material may be reproduced, distributed, shared, or transmitted in any form or by any means without proper attribution or written permission from the author.</p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveals
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12, rootMargin:"0px 0px -8% 0px"});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Lifespan sequential reveal
+  const track = document.getElementById('track');
+  const pts = Array.from(track.querySelectorAll('.pt'));
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      track.classList.add('in');
+      if(reduce){ pts.forEach(p=>p.classList.add('on')); tio.unobserve(track); return; }
+      pts.forEach((p,i)=>{
+        setTimeout(()=>{ p.style.transitionDelay=(i*0.07)+'s'; p.classList.add('on'); }, 300 + i*95);
+      });
+      tio.unobserve(track);
+    });
+  },{threshold:.3});
+  tio.observe(track);
+</script>
+
+
+</body></html>
